@@ -1,0 +1,108 @@
+.map {
+    height: 400px;
+    position: relative;
+
+    iframe {
+        position: absolute;
+        height: 400px;
+        width: 100%;
+    }
+
+    &__inner {
+        padding-top: 120px;
+    }
+
+    &__invitation {
+        position: relative;
+        z-index: 2;
+        padding: 60px 76px;
+        max-width: 570px;
+        background-color: $white;
+
+        max-height: 201px;
+
+        display: flex;
+        justify-content: space-between;
+
+        &-text {
+            max-width: 163px;
+            font-family: 'Oswald';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 21px;
+            color: $black;
+        }
+
+        &-address {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            max-width: 155px;
+
+            &-street {
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: $gray;
+            }
+
+            &-city {
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: $gray;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 1440px)
+{
+    .map {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        iframe {
+            position: relative;
+            order: 2;
+        }
+
+        &__inner {
+            padding-top: 0;
+        }
+
+        &__invitation {
+            max-width: initial;
+            padding: 28px 19px;
+
+            &-text {
+                font-size: 16px;
+            }
+
+            &-address {
+                &-street {
+                    font-size: 14px;
+                }
+
+                &-city {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    
+}
+
+@media(max-width: 768px)
+{
+    
+}

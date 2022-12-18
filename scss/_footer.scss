@@ -1,0 +1,72 @@
+.footer {
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 56px 0;
+    }
+
+    &__copy {
+        position: relative;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: $gray;
+
+        padding-right: 50px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            right: 0;
+
+            width: 27px;
+            height: 34px;
+
+            background: url(./../img/copy-icon.png) center no-repeat;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+    }
+}
+
+
+@media(max-width: 1440px)
+{
+
+}
+
+@media(max-width: 768px)
+{
+    .footer {
+
+        &__inner {
+            flex-direction: column;
+            gap: 52px;
+            position: relative;
+        }
+
+        &__social {
+            gap: 36px;
+        }
+
+        &__copy {
+            align-self: flex-start;
+            position: static;
+
+            &::before {
+                top: initial;
+                bottom: 52px;
+            }
+        }
+    }
+}
