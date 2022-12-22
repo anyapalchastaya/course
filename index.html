@@ -13,15 +13,15 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a href="#" class="header__logo">
+                <a href="index.html" class="header__logo">
                     <img src="./img/logo.png" alt="logo">
                 </a>
 
                 <div class="header__menu">
                     <div class="header__nav">
-                        <a href="#" class="header__nav-link">главная</a>
-                        <a href="#" class="header__nav-link">Каталог продукции</a>
-                        <a href="#" class="header__nav-link">подбор программы</a>
+                        <a href="index.html" class="header__nav-link">главная</a>
+                        <a href="not-found.html" class="header__nav-link">Каталог продукции</a>
+                        <a href="not-found.html" class="header__nav-link">подбор программы</a>
                     </div>
                 </div>
                 <div class="header__burger">
@@ -94,7 +94,7 @@
 
     <div class="advantages">
         <div class="container">
-            <div class="advatnages__inner">
+            <div class="advantages__inner">
 
                 <h3 class="advantages__title">
                     Как это работает
@@ -282,24 +282,7 @@
         </div>
     </footer>
 
-    <script>
-        let catAfter = document.querySelector('.solution__image-after-img');
-        let range = document.querySelector('input');
-        const burger = document.querySelector('.header__burger');
-        const header_menu = document.querySelector('.header__menu');
-        const body = document.querySelector('body');
-
-        catAfter.style.width = "50%";
-        range.addEventListener('input', () => {
-            catAfter.style.width = range.value + "%";
-        })
-
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            header_menu.classList.toggle('active');
-            body.classList.toggle('lock');
-        })
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

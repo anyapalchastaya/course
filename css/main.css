@@ -38,6 +38,12 @@ a {
   gap: 36px;
   position: relative;
 }
+.header__nav_green .header__nav-link {
+  color: #68B738;
+}
+.header__nav_green .header__nav-link:hover::before {
+  background-color: #68B738;
+}
 .header__nav-link {
   position: relative;
   font-family: "Oswald";
@@ -112,15 +118,15 @@ a {
     z-index: 10;
   }
   .header__menu {
-    position: fixed;
+    position: fixed; /*близко к absolute, но в отличие от него привязывается к указанной свойствами left.. точке на экране и не меняет своего положения при прокрутке веб-страницы*/
     top: 0;
     left: 0;
     z-index: 5;
     width: 100%;
-    height: 100vh;
+    height: 100vh; /*проценты далеко не лучшее решение для каждого случая, так как они вычисляются относительно размеров ближайшего родительского элемента*/
     background-color: #fff;
     transform: translateY(-100%);
-    overflow: auto;
+    overflow: auto; /*Полосы прокрутки добавляются только при необходимости.*/
     transition: all 0.2s ease;
   }
   .header__menu.active {
@@ -245,7 +251,7 @@ a {
   position: absolute;
   width: 50%;
   height: 694px;
-  transform-origin: top right;
+  transform-origin: top right; /*Устанавливает координаты точки, относительно которой будет происходить трансформация элемента.*/
   right: 0;
   top: 0;
   background: url(./../img/intro-bg.jpg) center no-repeat;
@@ -364,7 +370,7 @@ a {
   }
 }
 .programs {
-  margin-bottom: 70px;
+  margin-bottom: 86px;
 }
 .programs__list {
   display: flex;
@@ -415,7 +421,7 @@ a {
   line-height: 24px;
   color: #000;
   max-width: 470px;
-  margin-bottom: 23px;
+  margin-bottom: 27px;
 }
 .programs__list-item-catalogue {
   position: relative;
@@ -538,7 +544,7 @@ a {
     font-size: 16px;
   }
   .programs__list-item-catalogue::after {
-    top: 10px;
+    top: 9px;
   }
   [data-program=gain]::after {
     width: 67px;
@@ -549,7 +555,7 @@ a {
   }
 }
 .advantages {
-  margin-bottom: 82px;
+  margin-bottom: 68px;
 }
 .advantages__inner {
   display: flex;
@@ -562,7 +568,7 @@ a {
   font-size: 60px;
   line-height: 60px;
   color: #000;
-  margin-bottom: 52px;
+  margin-bottom: 72px;
 }
 .advantages__list {
   display: flex;
@@ -658,6 +664,7 @@ a {
   font-size: 60px;
   line-height: 60px;
   color: #000;
+  padding-top: 58px;
 }
 .solution__cards {
   display: flex;
@@ -917,6 +924,7 @@ a {
   font-size: 20px;
   line-height: 21px;
   color: #000;
+  text-transform: uppercase;
 }
 .map__invitation-address {
   display: flex;

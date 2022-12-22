@@ -1,0 +1,294 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
+.header__inner {
+  padding: 52px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__burger {
+  display: none;
+  cursor: pointer;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+}
+.header__nav_green .header__nav-link {
+  color: #68B738;
+}
+.header__nav_green .header__nav-link:hover::before {
+  background-color: #68B738;
+}
+.header__nav-link {
+  position: relative;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+  text-transform: uppercase;
+  color: #fff;
+}
+.header__nav-link:hover::before {
+  transform: scaleX(1);
+}
+.header__nav-link::before {
+  content: "";
+  transform: scaleX(0);
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  bottom: -10px;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 1440px) {
+  .header__logo {
+    width: 174px;
+    height: 52px;
+  }
+  .header__logo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .header__inner {
+    padding-top: 42px;
+  }
+  .header__nav {
+    gap: 34px;
+  }
+  .header__nav-link {
+    color: #000;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .header__nav-link::before {
+    background-color: #68B738;
+  }
+}
+@media (max-width: 768px) {
+  .header__logo {
+    height: 38px;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 66px;
+    background-color: #fff;
+    z-index: 10S;
+  }
+  body.lock {
+    overflow: hidden;
+  }
+  .header__inner {
+    padding-top: 12px;
+  }
+  .header__logo {
+    position: relative;
+    z-index: 10;
+  }
+  .header__menu {
+    position: fixed; /*близко к absolute, но в отличие от него привязывается к указанной свойствами left.. точке на экране и не меняет своего положения при прокрутке веб-страницы*/
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100vh; /*проценты далеко не лучшее решение для каждого случая, так как они вычисляются относительно размеров ближайшего родительского элемента*/
+    background-color: #fff;
+    transform: translateY(-100%);
+    overflow: auto; /*Полосы прокрутки добавляются только при необходимости.*/
+    transition: all 0.2s ease;
+  }
+  .header__menu.active {
+    transform: translateY(0);
+  }
+  .header__nav {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 120px;
+    z-index: 10;
+  }
+  .header__nav-link {
+    font-size: 24px;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    z-index: 10;
+    width: 24px;
+    height: 16px;
+  }
+  .header__burger.active span {
+    opacity: 0;
+  }
+  .header__burger.active::before {
+    transform: rotate(-45deg);
+    top: 7px;
+  }
+  .header__burger.active::after {
+    transform: rotate(45deg);
+    bottom: 7px;
+  }
+  .header__burger span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    top: 7px;
+    left: 0;
+    transition: all 0.2s ease;
+  }
+  .header__burger::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease;
+  }
+  .header__burger::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s ease;
+  }
+}
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px 0;
+}
+.footer__copy {
+  position: relative;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #444444;
+  padding-right: 50px;
+}
+.footer__copy::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 27px;
+  height: 34px;
+  background: url(./../img/copy-icon.png) center no-repeat;
+}
+.footer__social {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .footer__inner {
+    flex-direction: column;
+    gap: 52px;
+    position: relative;
+  }
+  .footer__social {
+    gap: 36px;
+  }
+  .footer__copy {
+    align-self: flex-start;
+    position: static;
+  }
+  .footer__copy::before {
+    top: initial;
+    bottom: 52px;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180px;
+}
+.main__img {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.main__img img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.main__title {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+}
+.main__subtitle {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 100px;
+  }
+  .main__img {
+    width: 280px;
+    height: 280px;
+  }
+}/*# sourceMappingURL=not-found.css.map */

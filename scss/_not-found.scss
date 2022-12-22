@@ -1,0 +1,55 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 180px;
+
+    &__img {
+        position: relative;
+        width: 400px;
+        height: 400px;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__title {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+    }
+
+    &__subtitle {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .main {
+        padding-top: 100px;
+    }
+    .main__img {
+        width: 280px;
+        height: 280px;
+    }
+}
